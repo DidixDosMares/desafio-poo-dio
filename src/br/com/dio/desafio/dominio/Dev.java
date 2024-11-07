@@ -37,7 +37,17 @@ public class Dev {
                 .sum();*/
     }
 
+    // Verifica se o Dev completou todos os conteúdos do Bootcamp
+    public boolean isBootcampCompleto() {
+        return conteudosInscritos.isEmpty();
+    }
 
+    // Calcula o progresso do Dev no Bootcamp em percentual
+    public double calcularProgresso() {
+        int totalConteudos = conteudosInscritos.size() + conteudosConcluidos.size();
+        return totalConteudos == 0 ? 0 : (conteudosConcluidos.size() / (double) totalConteudos) * 100;
+    }
+    
     public String getNome() {
         return nome;
     }
